@@ -1,5 +1,7 @@
 pipeline {
-    agent any 
+    agent any
+    choice = new ChoiceParameterDefinition('Param name', ['option1', 'option2'] as String[], 'Description')
+    input message: 'Select one', parameters: [choice]
     stages {
         stage('Example Build') {
             steps {
