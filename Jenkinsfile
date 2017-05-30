@@ -21,6 +21,7 @@ pipeline {
           },
           "Parallel_task": {
             sh 'echo "Parallel Task"'
+            git(url: 'https://github.com/bharath0080/test.git', branch: 'master')
             
           }
         )
