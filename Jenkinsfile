@@ -7,7 +7,7 @@ pipeline {
 				env.RELEASE_SCOPE = input message: 'OK to continue?', parameters: [string(defaultValue: 'Dev', description: '', name: 'Environment'), string(defaultValue: 'CSP', description: '', name: 'Component'), string(defaultValue: '1.0', description: '', name: 'Version')]
 					echo "${env.RELEASE_SCOPE}"
 			    		echo "In hereeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-					echo ("ENVVVVVVV: "+RELEASE_SCOPE['Environment'])
+					echo ("ENVVVVVVV: "+env.RELEASE_SCOPE['Environment'])
 			    		echo "Out of hereeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 		    }
 					                    
