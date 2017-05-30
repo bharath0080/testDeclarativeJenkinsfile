@@ -13,7 +13,7 @@ pipeline {
 					echo ("ENVVVVVVV: "+RELEASE_SCOPE['Environment'])
 			    		echo "Out of hereeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 		    }
-			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/bharath0080/new-proj1.git']]])
+			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '371a964f-c1a8-4b8c-9140-7b45a872a093', url: 'https://github.com/bharath0080/new-proj1.git']]])
 					                    
                 }
                 
