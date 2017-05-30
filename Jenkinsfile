@@ -2,8 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Download Artifacts') {
+		steps {
 		ws('/var/tmp/PROJ2') {
-            steps {
+            
 		    script {
 				def RELEASE_SCOPE = input message: 'OK to continue?', parameters: [string(defaultValue: 'Dev', description: '', name: 'Environment'), string(defaultValue: 'CSP', description: '', name: 'Component'), string(defaultValue: '1.0', description: '', name: 'Version')]
 					echo "${RELEASE_SCOPE}"
@@ -18,8 +19,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+		steps {
 		ws('/var/tmp/PROJ1') {
-                steps {
+                
                 echo 'Hello, JDK'
                 sh 'java -version'
 				git 'https://github.com/bharath0080/SampleStudentProject.git'
