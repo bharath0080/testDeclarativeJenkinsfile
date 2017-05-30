@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('Download Artifacts') {
-		
+		agent { label 'test' }
 		steps {
 		ws('/var/tmp/PROJ2') {
             
@@ -13,7 +13,7 @@ pipeline {
 					echo ("ENVVVVVVV: "+RELEASE_SCOPE['Environment'])
 			    		echo "Out of hereeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 		    }
-			git 'https://github.com/bharath0080/new-proj1.git'
+			checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/bharath0080/new-proj1.git']]])
 					                    
                 }
                 
