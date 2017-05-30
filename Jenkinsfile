@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('Download Artifacts') {
-		agent { label 'test' }
+		
 		steps {
 		ws('/var/tmp/PROJ2') {
             
@@ -13,7 +13,7 @@ pipeline {
 					echo ("ENVVVVVVV: "+RELEASE_SCOPE['Environment'])
 			    		echo "Out of hereeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 		    }
-			git 'https://github.com/bharath0080/SampleStudentProject.git'
+			git 'https://github.com/bharath0080/new-proj1.git'
 					                    
                 }
                 
