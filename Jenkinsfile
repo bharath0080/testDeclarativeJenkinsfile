@@ -1,5 +1,5 @@
 pipeline {
-    agetn any
+    agent any
     stages {
         stage('Download Artifacts') {
 		agent test
