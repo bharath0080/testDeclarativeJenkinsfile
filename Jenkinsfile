@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('Download Artifacts') {
-		agent test
+		agent { label 'test' }
 		steps {
 		ws('/var/tmp/PROJ2') {
             
