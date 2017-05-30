@@ -13,7 +13,7 @@ pipeline {
 					echo ("ENVVVVVVV: "+RELEASE_SCOPE['Environment'])
 			    		echo "Out of hereeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 		    }
-			git credentialsId: '371a964f-c1a8-4b8c-9140-7b45a872a093', url: 'https://github.com/bharath0080/new-proj1.git'
+			git 'https://github.com/bharath0080/new-proj1.git'
 					                    
                 }
                 
