@@ -1,26 +1,22 @@
 pipeline {
     agent any
     stages {
-        stage('Example Build') {
+        stage('Download Artifacts') {
             steps {
-               echo 'Hello, Maven'
-                sh 'mvn --version'
-            }
+				env.RELEASE_SCOPE = input message: 'OK to continue?', parameters: [string(defaultValue: 'Dev', description: '', name: 'Environment'), string(defaultValue: 'CSP', description: '', name: 'Component'), string(defaultValue: '1.0', description: '', name: 'Version')]
+					echo "${env.RELEASE_SCOPE}"
+					                    
+                }
+                
+            
         }
-        stage('Example Test') {
+        stage('Deploy') {
             steps {
                 echo 'Hello, JDK'
                 sh 'java -version'
             }
         }
-		stage("foo") {
-            steps {
-                script {
-                    env.RELEASE_SCOPE = input message: 'User input required', ok: 'Release!',
-                            parameters: [choice(name: 'RELEASE_SCOPE', choices: 'patch\nminor\nmajor', description: 'What is the release scope?')]
-                }
-                echo "${env.RELEASE_SCOPE}"
-            }
-        }
+		
+		}
     }
-}
+
