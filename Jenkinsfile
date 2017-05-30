@@ -1,7 +1,8 @@
 pipeline {
-    agent any
+    
     stages {
         stage('Download Artifacts') {
+		agent test
 		steps {
 		ws('/var/tmp/PROJ2') {
             
@@ -19,6 +20,7 @@ pipeline {
             }
         }
         stage('Deploy') {
+		
 		steps {
 		ws('/var/tmp/PROJ1') {
                 
